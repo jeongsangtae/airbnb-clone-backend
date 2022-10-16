@@ -1,11 +1,11 @@
-from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from .models import Amenity, Room
 from users.serializers import TinyUserSerializer
+from reviews.serializers import ReviewSerializer
 from categories.serializers import CategorySerializer
 
 
-class AmenitySerializer(ModelSerializer):
+class AmenitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Amenity
         fields = (
@@ -14,7 +14,7 @@ class AmenitySerializer(ModelSerializer):
         )
 
 
-class RoomDetailSerializer(ModelSerializer):
+class RoomDetailSerializer(serializers.ModelSerializer):
 
     owner = TinyUserSerializer(
         read_only=True,
@@ -28,6 +28,10 @@ class RoomDetailSerializer(ModelSerializer):
     )
     rating = serializers.SerializerMethodField()
     is_owner = serializers.SerializerMethodField()
+    reviews = ReviewSerializer(
+        many=True,
+        read_only=True,
+    )
 
     class Meta:
         model = Room
@@ -41,7 +45,7 @@ class RoomDetailSerializer(ModelSerializer):
         return room.owner == request.user
 
 
-class RoomListSerializer(ModelSerializer):
+class RoomListSerializer(serializers.ModelSerializer):
 
     rating = serializers.SerializerMethodField()
     is_owner = serializers.SerializerMethodField()
