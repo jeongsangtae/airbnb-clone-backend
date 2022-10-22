@@ -187,5 +187,3 @@ class TestRoom(APITestCase):
         )
 
         response = self.client.post("/api/v1/rooms/")
-
-        print(response.json())
