@@ -1,6 +1,15 @@
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
-from .views import Me, Users, PublicUser, ChangePassword, LogIn, LogOut, JWTLogIn
+from .views import (
+    Me,
+    Users,
+    PublicUser,
+    ChangePassword,
+    LogIn,
+    LogOut,
+    JWTLogIn,
+    GithubLogIn,
+)
 
 urlpatterns = [
     path("", Users.as_view()),
@@ -10,5 +19,6 @@ urlpatterns = [
     path("log-out", LogOut.as_view()),
     path("token-login", obtain_auth_token),
     path("jwt-login", JWTLogIn.as_view()),
+    path("github", GithubLogIn.as_view()),
     path("<str:username>", PublicUser.as_view()),
 ]
