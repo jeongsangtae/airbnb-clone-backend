@@ -38,4 +38,5 @@ class GetUploadURL(APIView):
             },
         )
         one_time_url = one_time_url.json()
-        return Response(one_time_url)
+        result = one_time_url.get("result")
+        return Response({"id": result.get("id"), "uploadURL": result.get("uploadURL")})
