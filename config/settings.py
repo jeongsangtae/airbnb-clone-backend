@@ -208,8 +208,7 @@ CF_TOKEN = env("CF_TOKEN")
 
 
 if not DEBUG:
-    SESSION_COOKIE_DOMAIN = ".ggpan.co.kr"
-    CSRF_COOKIE_DOMAIN = ".ggpan.co.kr"
+
     sentry_sdk.init(
         dsn="https://82204f2f8dad4a77b5533d31eb478f41@o4504124036415488.ingest.sentry.io/4504124043952128",
         integrations=[
