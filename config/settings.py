@@ -198,8 +198,8 @@ if DEBUG:
     CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000"]
 
 else:
-    CORS_ALLOWED_ORIGINS = ["https://airbnb-frontend-rfsy.onrender.com"]
-    CSRF_TRUSTED_ORIGINS = ["https://airbnb-frontend-rfsy.onrender.com"]
+    CORS_ALLOWED_ORIGINS = ["https://jeongsangtae.xyz"]
+    CSRF_TRUSTED_ORIGINS = ["https://jeongsangtae.xyz"]
 
 CORS_ALLOW_CREDENTIALS = True
 GH_SECRET = env("GH_SECRET")
