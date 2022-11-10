@@ -1,5 +1,5 @@
 databases:
-  - name: airbnbclone-db2
+  - name: airbnbclone-db
     databaseName: airbnbclone
     user: airbnbclone
     region: singapore
