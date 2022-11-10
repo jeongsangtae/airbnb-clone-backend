@@ -184,7 +184,7 @@ class KakaoLogIn(APIView):
                 data={
                     "grant_type": "authorization_code",
                     "client_id": "978f62f56936d066b4442cea0bee4ff5",
-                    "redirect_uri": "https://jeongsangtae.xyz/social/kakao",
+                    "redirect_uri": "http://127.0.0.1:3000/social/kakao",
                     "code": code,
                 },
             )
